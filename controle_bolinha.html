@@ -1,22 +1,7 @@
 <canvas width="600" height="400"></canvas>
 
 <script>
-
-    var tela = document.querySelector('canvas');
-    var pincel = tela.getContext('2d');
-    pincel.fillStyle = 'lightgray';
-    pincel.fillRect(0, 0, 600, 400);
-
-    var x = 20;
-    var y = 20;
-
-    var esquerda = 37;
-    var cima = 38;
-    var direita = 39;
-    var baixo = 40;
-
-    var taxa = 10;
-
+    
     function desenhaCirculo(x, y, raio) {
 
         pincel.fillStyle = 'blue';
@@ -35,8 +20,6 @@
         limpaTela();
         desenhaCirculo(x, y, 10);
     }
-
-    setInterval(atualizaTela, 20);
 
     function leDoTeclado(evento) {
 
@@ -57,6 +40,23 @@
         }
 
     }
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var x = 20;
+    var y = 20;
+
+    var esquerda = 37;
+    var cima = 38;
+    var direita = 39;
+    var baixo = 40;
+
+    var taxa = 10;
+
+    setInterval(atualizaTela, 20);
 
     document.onkeydown = leDoTeclado;
 
