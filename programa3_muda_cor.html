@@ -1,13 +1,6 @@
 <canvas width="600" height="400"></canvas>
 
 <script>
-    var tela = document.querySelector('canvas');
-    var pincel = tela.getContext('2d');
-    pincel.fillStyle = 'grey';
-    pincel.fillRect(0, 0, 600, 400);
-
-    var cores = ['blue', 'red', 'green']
-    var indiceCorAtual = 0;
 
     function desenhaCirculo(evento) {
 
@@ -19,9 +12,7 @@
         pincel.fill();
         console.log(x + ',' + y);
     }
-
-    tela.onclick = desenhaCirculo;
-
+    
     function mudaCor()
     {
         indiceCorAtual++;
@@ -33,6 +24,16 @@
         
         return false;
     }
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var cores = ['blue', 'red', 'green']
+    var indiceCorAtual = 0;
+
+    tela.onclick = desenhaCirculo;
 
     tela.oncontextmenu = mudaCor;
 
